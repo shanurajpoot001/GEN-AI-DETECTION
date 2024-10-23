@@ -57,7 +57,7 @@ To set up the project locally, follow these steps:
    ```
 
 ## Usage
-1. Open your browser and go to ```bash http://localhost:3000.```
+1. Open your browser and go to ```http://localhost:3000```
 2. Upload a pair of texts (one human-written and one AI-generated).
 3. Click on the "Analyse" button to see the results.
 
