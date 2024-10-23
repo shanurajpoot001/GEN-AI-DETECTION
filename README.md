@@ -56,7 +56,18 @@ To set up the project locally, follow these steps:
     npm start
    ```
 
+## Usage
+1. Open your browser and go to ```bash http://localhost:3000.```
+2. Upload a pair of texts (one human-written and one AI-generated).
+3. Click on the "Analyse" button to see the results.
 
-   
+## Contributing
+Contributions are welcome! If you have suggestions for improvements or new features, please fork the repository and submit a pull request.
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+
+
 
    
