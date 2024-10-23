@@ -65,7 +65,7 @@ To set up the project locally, follow these steps:
 Contributions are welcome! If you have suggestions for improvements or new features, please fork the repository and submit a pull request.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/AkashKobal/Generative-AI-Detection/blob/main/LICENSE) file for details.
 
 
 
