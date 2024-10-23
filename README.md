@@ -28,8 +28,8 @@ To set up the project locally, follow these steps:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/generative-ai-detection.git
-   cd generative-ai-detection
+   git clone https://github.com/AkashKobal/Generative-AI-Detection.git
+   cd Generative-AI-Detection
    ```
 
 2. **Install frontend dependencies:**
