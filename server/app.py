@@ -1,12 +1,19 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 import torch
 import re
 from transformers import GPT2LMHeadModel, GPT2TokenizerFast
 from collections import OrderedDict
+import os
 
 app = Flask(__name__)
 CORS(app)
+
+# Add favicon route
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                             'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 # GPT2PPL class definition
 class GPT2PPL:
@@ -78,17 +85,18 @@ class GPT2PPL:
         ppl = int(torch.exp(torch.stack(nlls).sum() / end_loc))
         return ppl
 
-# API route to analyze text
-@app.route('/', methods=['POST'])
+# Update the main route to accept both GET and POST
+@app.route('/', methods=['GET', 'POST'])
 def postData():
+    if request.method == 'GET':
+        return jsonify({'message': 'Welcome to the Generative AI Detection API'}), 200
+    
     try:
-        data = request.get_json()  # Get the JSON payload correctly
+        data = request.get_json()
         text = data.get('text')
         if not text:
             return jsonify({'error': 'No text provided'}), 400
-        # Create an instance of GPT2PPL class
         gpt2ppl = GPT2PPL()
-        # Get results by calling the instance
         results, output = gpt2ppl(text)
         return jsonify({"output": output, "results": dict(results)})    
     except Exception as e:
